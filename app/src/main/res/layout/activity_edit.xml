@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/button_save"
-                android:onClick="@{(view) -> viewModel.updateAddress( addressEdit.getText() )}"
+                android:onClick="@{(view) -> viewModel.updateAddress( addressEdit.getText().toString() )}"
                 app:layout_constraintLeft_toLeftOf="@id/address_edit"
                 app:layout_constraintRight_toRightOf="@id/address_edit"
                 app:layout_constraintTop_toBottomOf="@+id/address_edit"/>
