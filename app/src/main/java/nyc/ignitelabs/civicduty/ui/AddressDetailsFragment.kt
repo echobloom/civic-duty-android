@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import nyc.ignitelabs.civicduty.R
-import nyc.ignitelabs.civicduty.databinding.FragmentMainBinding
+import nyc.ignitelabs.civicduty.databinding.FragmentAddressDetailsBinding
 import nyc.ignitelabs.civicduty.viewmodel.AddressViewModel
 
 class AddressDetailsFragment : Fragment() {
@@ -18,8 +18,8 @@ class AddressDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: FragmentMainBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_main, container, false
+        val binding: FragmentAddressDetailsBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_address_details, container, false
         )
 
         binding.vm = vm

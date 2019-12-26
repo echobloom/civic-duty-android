@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
+        <import type="nyc.ignitelabs.civicduty.ui.AddressEditFragmentDirections"/>
         <variable name="vm" type="nyc.ignitelabs.civicduty.viewmodel.AddressViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".ui.MainActivity">
+            android:layout_height="match_parent">
 
-        <TextView
-                android:id="@+id/address"
+        <EditText
+                android:id="@+id/address_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{vm.addressUpdated}"
-                android:hint="@string/address_hint"
+                android:text="@{vm.address}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:importantForAutofill="no"/>
+                android:importantForAutofill="no"
+                android:hint="@string/edit_address"
+                android:inputType="textPostalAddress"/>
 
         <Button
-                android:id="@+id/button_edit"
+                android:id="@+id/button_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_edit"
-                android:onClick="@{() -> vm.editAddress( address.getText() )}"
-                app:layout_constraintLeft_toLeftOf="@id/address"
-                app:layout_constraintRight_toRightOf="@id/address"
-                app:layout_constraintTop_toBottomOf="@+id/address"/>
+                android:text="@string/button_save"
+                android:onClick="@{(view) -> vm.updatedAddress( addressEdit.getText().toString() )}"
+                app:layout_constraintLeft_toLeftOf="@id/address_edit"
+                app:layout_constraintRight_toRightOf="@id/address_edit"
+                app:layout_constraintTop_toBottomOf="@+id/address_edit"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

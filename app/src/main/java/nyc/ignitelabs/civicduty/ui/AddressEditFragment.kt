@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import nyc.ignitelabs.civicduty.R
-import nyc.ignitelabs.civicduty.databinding.FragmentEditBinding
+import nyc.ignitelabs.civicduty.databinding.FragmentAddressEditBinding
 import nyc.ignitelabs.civicduty.viewmodel.AddressViewModel
 
 class AddressEditFragment : Fragment() {
@@ -18,8 +18,8 @@ class AddressEditFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val binding: FragmentEditBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_edit, container, false
+        val binding: FragmentAddressEditBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_address_edit, container, false
         )
         val view: View = binding.root
 
@@ -27,5 +27,4 @@ class AddressEditFragment : Fragment() {
 
         return view
     }
-
 }

@@ -18,27 +18,13 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        viewModel.editAddress.observe(this, Observer {
-            navigateEditAddress()
-        })
-
-        viewModel.addressUpdated.observe(this, Observer {
-            navigateDetailsAddress()
-        })
-
         viewModel.error.observe(this, Observer {
             displayErrorMessage(it)
         })
-    }
 
-    private fun navigateDetailsAddress(){
-        val action = AddressEditFragmentDirections.actionEditViewToMain()
-        findNavController(R.id.nav_host_fragment).navigate(action)
-    }
-
-    private fun navigateEditAddress(){
-        val action = AddressDetailsFragmentDirections.actionMainToEditView()
-        findNavController(R.id.nav_host_fragment).navigate(action)
+        viewModel.navigate.observe(this, Observer {
+            findNavController(R.id.nav_host_fragment).navigate(it)
+        })
     }
 
     private fun displayErrorMessage(error: DisplayableError) {
