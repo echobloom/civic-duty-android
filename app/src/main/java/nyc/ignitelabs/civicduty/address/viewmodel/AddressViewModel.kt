@@ -1,12 +1,12 @@
-package nyc.ignitelabs.civicduty.viewmodel
+package nyc.ignitelabs.civicduty.address.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavDirections
-import nyc.ignitelabs.civicduty.ui.AddressDetailsFragmentDirections
-import nyc.ignitelabs.civicduty.ui.AddressEditFragmentDirections
-import nyc.ignitelabs.civicduty.viewmodel.models.DisplayableError
+import nyc.ignitelabs.civicduty.address.view.AddressDetailsFragmentDirections
+import nyc.ignitelabs.civicduty.address.view.AddressEditFragmentDirections
+import nyc.ignitelabs.civicduty.address.viewmodel.models.DisplayableError
 
 class AddressViewModel : ViewModel() {
     private val _address = MutableLiveData<String>()

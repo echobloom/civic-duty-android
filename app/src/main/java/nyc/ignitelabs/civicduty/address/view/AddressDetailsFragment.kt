@@ -1,4 +1,4 @@
-package nyc.ignitelabs.civicduty.ui
+package nyc.ignitelabs.civicduty.address.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import nyc.ignitelabs.civicduty.R
 import nyc.ignitelabs.civicduty.databinding.FragmentAddressDetailsBinding
-import nyc.ignitelabs.civicduty.viewmodel.AddressViewModel
+import nyc.ignitelabs.civicduty.address.viewmodel.AddressViewModel
 
 class AddressDetailsFragment : Fragment() {
     val vm: AddressViewModel by activityViewModels()

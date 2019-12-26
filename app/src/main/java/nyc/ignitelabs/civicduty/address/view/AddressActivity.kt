@@ -1,4 +1,4 @@
-package nyc.ignitelabs.civicduty.ui
+package nyc.ignitelabs.civicduty.address.view
 
 import android.os.Bundle
 import android.widget.Toast
@@ -7,16 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import nyc.ignitelabs.civicduty.R
-import nyc.ignitelabs.civicduty.viewmodel.AddressViewModel
-import nyc.ignitelabs.civicduty.viewmodel.models.DisplayableError
+import nyc.ignitelabs.civicduty.address.viewmodel.AddressViewModel
+import nyc.ignitelabs.civicduty.address.viewmodel.models.DisplayableError
 
-class MainActivity : AppCompatActivity() {
+class AddressActivity : AppCompatActivity() {
     private val viewModel: AddressViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_address)
 
         viewModel.error.observe(this, Observer {
             displayErrorMessage(it)

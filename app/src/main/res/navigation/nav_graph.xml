@@ -6,11 +6,11 @@
 
     <fragment
             android:id="@+id/main"
-            android:name="nyc.ignitelabs.civicduty.ui.AddressDetailsFragment"
+            android:name="nyc.ignitelabs.civicduty.address.view.AddressDetailsFragment"
             android:label="fragment_main">
         <action android:id="@+id/action_main_to_editView" app:destination="@+id/editView"/>
     </fragment>
-    <fragment android:id="@+id/editView" android:name="nyc.ignitelabs.civicduty.ui.AddressEditFragment" android:label="EditView">
+    <fragment android:id="@+id/editView" android:name="nyc.ignitelabs.civicduty.address.view.AddressEditFragment" android:label="EditView">
         <action android:id="@+id/action_editView_to_main" app:destination="@+id/main"/>
     </fragment>
 </navigation>

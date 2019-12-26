@@ -1,4 +1,4 @@
-package nyc.ignitelabs.civicduty.viewmodel
+package nyc.ignitelabs.civicduty.address.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
