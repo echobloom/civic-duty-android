@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/main">
+
+    <fragment
+            android:id="@+id/main"
+            android:name="nyc.ignitelabs.civicduty.ui.AddressDetailsFragment"
+            android:label="fragment_main">
+        <action android:id="@+id/action_main_to_editView" app:destination="@+id/editView"/>
+    </fragment>
+    <fragment android:id="@+id/editView" android:name="nyc.ignitelabs.civicduty.ui.AddressEditFragment" android:label="EditView">
+        <action android:id="@+id/action_editView_to_main" app:destination="@+id/main"/>
+    </fragment>
+</navigation>

@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 def envSecretsFile = rootProject.file(".env")
 
@@ -18,7 +19,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        if (envSecretsFile.exists() ) {
+        if (envSecretsFile.exists()) {
             def props = new Properties()
 
             props.load(new FileInputStream(envSecretsFile))
@@ -47,24 +48,30 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    def appCompatVersion = "1.2.0-alpha01" // do not update until https://issuetracker.google.com/issues/141132133 has been fixed
+    def appCompatVersion = "1.2.0-alpha01"
+    // do not update until https://issuetracker.google.com/issues/141132133 has been fixed
     def cardViewVersion = "1.0.0"
     def constraintLayoutVersion = "1.1.3"
     def leakCanaryVersion = "2.0-beta-2"
     def archLifecycleVersion = "2.2.0-rc03"
+    def nav_version = "2.1.0"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
-    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
-    implementation "androidx.cardview:cardview:${cardViewVersion}"
-    implementation "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.cardview:cardview:$cardViewVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation "androidx.activity:activity-ktx:1.0.0"
 
-    implementation "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"
+    implementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
 
-    implementation "androidx.lifecycle:lifecycle-extensions:${archLifecycleVersion}"
-    implementation "androidx.lifecycle:lifecycle-common-java8:${archLifecycleVersion}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${archLifecycleVersion}"
-    implementation "androidx.lifecycle:lifecycle-process:${archLifecycleVersion}"
+    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-process:$archLifecycleVersion"
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     kapt 'com.android.databinding:compiler:3.4.2'
 
@@ -79,3 +86,5 @@ dependencies {
 
 
 }
+
+apply plugin: "androidx.navigation.safeargs.kotlin"

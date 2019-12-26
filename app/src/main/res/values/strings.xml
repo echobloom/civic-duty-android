@@ -4,4 +4,5 @@
     <string name="button_edit">Edit</string>
     <string name="edit_address">Edit address</string>
     <string name="error_general">Whoops, something is wrong</string>
+    <string name="address_hint">No address set</string>
 </resources>
